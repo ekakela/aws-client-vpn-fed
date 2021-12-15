@@ -88,7 +88,7 @@ resource "aws_ec2_client_vpn_endpoint" "client_vpn" {
 
   authentication_options {
     type                        = var.client_auth
-    active_directory_id         = var.active_directory_id
+    active_directory_id         = "null"
     root_certificate_chain_arn  = aws_acm_certificate.server_cert.arn
     saml_provider_arn           = var.saml_provider_arn
   }
