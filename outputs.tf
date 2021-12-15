@@ -37,3 +37,7 @@ output "client_vpn_endpoint_dns_name" {
 output "client_vpn_endpoint_status" {
   value = aws_ec2_client_vpn_endpoint.client_vpn.status
 }
+
+output "aws_client_sg" {
+  value = aws_security_group.client_vpn.arn
+}

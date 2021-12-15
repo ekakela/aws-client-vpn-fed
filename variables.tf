@@ -104,6 +104,6 @@ variable "saml_provider_arn" {
 }
 
 variable "vpc_id" {
-  description = "The VPC ID to which we need to generate the SG for clientVPN."
+  description = "The VPC ID to which we need to generate the SG for clientVPN ."
   type        = string
 }

@@ -103,6 +103,7 @@ resource "aws_ec2_client_vpn_endpoint" "client_vpn" {
     environment = merge(local.provisioner_base_env, {
       "CLIENT_VPN_ID" = self.id
       "SG_ID" = aws_security_group.VPNSG.id
+      "VPC_ID" = var.vpc_id
     })
     command = "${path.module}/scripts/authorize_client.sh"
   }
