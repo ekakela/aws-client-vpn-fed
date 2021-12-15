@@ -47,6 +47,7 @@ variable "subnet_id" {
 variable "client_cidr_block" {
   description = "VPN CIDR block, must not overlap with VPC CIDR. Client cidr block must be at least a /22 range."
   type        = string
+  default = "10.250.0.0/22"
 }
 
 variable "target_cidr_block" {
