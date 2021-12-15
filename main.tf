@@ -148,7 +148,7 @@ resource "aws_cloudwatch_log_stream" "client_vpn" {
 resource "aws_security_group" "VPNSG" {
   name        = "ClientPVNSecurityGroup"
   description = "AWS Client VPN Security Group"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = var.vpc_id
 
   # Allow all outbound traffic.
   egress {
