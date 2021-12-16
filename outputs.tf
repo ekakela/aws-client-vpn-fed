@@ -39,5 +39,5 @@ output "client_vpn_endpoint_status" {
 }
 
 output "aws_client_sg" {
-  value = aws_security_group.VPNSG.arn
+  value = aws_security_group.VPNSG.id
 }
