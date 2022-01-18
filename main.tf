@@ -9,7 +9,7 @@ locals {
     "TARGET_CIDR"     = var.target_cidr_block
     "MODULE_PATH"     = path.module
     "CONCURRENCY"     = "true"
-    "AWSCLIPROFILE"   = var.aws_cli_profile_name
+
   }
 
   clients = concat(var.clients)
