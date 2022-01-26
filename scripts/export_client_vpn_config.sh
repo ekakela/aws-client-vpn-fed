@@ -7,7 +7,10 @@ CLIENT_CERTIFICATE=$CLIENT_CERT_NAME.$CERT_ISSUER
 
 aws ec2 export-client-vpn-client-configuration --client-vpn-endpoint-id $CLIENT_VPN_ID --output text > $FULL_CLIENT_CERTIFICATE_NAME.ovpn
 
-sed -i "s/"$CLIENT_VPN_ID"/"$TENANT_NAME.$CLIENT_VPN_ID"/g" $FULL_CLIENT_CERTIFICATE_NAME.ovpn
+#sed -i "s/"$CLIENT_VPN_ID"/"$TENANT_NAME.$CLIENT_VPN_ID"/g" $FULL_CLIENT_CERTIFICATE_NAME.ovpn
+#support both BSD (Mac) and GNU versions of sed
+sed -i'' -e "s/"$CLIENT_VPN_ID"/"$TENANT_NAME.$CLIENT_VPN_ID"/g" $FULL_CLIENT_CERTIFICATE_NAME.ovpn 
+
 #echo "<cert>" >> $FULL_CLIENT_CERTIFICATE_NAME.ovpn
 #cat $KEY_SAVE_FOLDER_PATH/$CLIENT_CERTIFICATE.crt >> $#FULL_CLIENT_CERTIFICATE_NAME.ovpn
 #echo "</cert>" >> $FULL_CLIENT_CERTIFICATE_NAME.ovpn
